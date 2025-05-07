@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crianza respetuosa, tejiendo vínculos entre familia, escuela y comunidad</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif; 
+      background-color: #fffaf9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      margin-top: 10px;
+      font-size: 3em;
+      color: #fff;
+    }
+
+    header .hero-icon {
+      font-size: 60px;
+      color: white;
+      animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    .secciones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
+    }
+
+    .seccion {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 40px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .seccion:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .seccion .icono {
+      font-size: 50px;
+      color: #ee9ca7;
+      margin-bottom: 20px;
+    }
+
+    .contenido-placeholder {
+      height: 12px;
+      background-color: #eee;
+      border-radius: 10px;
+      margin: 8px auto;
+      width: 80%;
+    }
+
+    .pagina {
+      display: none;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .pagina.active {
+      display: block;
+    }
+
+    .pagina header {
+      background: linear-gradient(135deg, #ee9ca7, #ffc3a0);
+      padding: 40px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .pagina header .icono {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .pagina header h2 {
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .bloque {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin: 30px 0;
+    }
+
+    .bloque h3 {
+      color: #000;
+      margin-bottom: 15px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      line-height: 1.6;
+    }
+
+    .texto-placeholder {
+      height: 14px;
+      background: #eee;
+      border-radius: 8px;
+      margin: 10px 0;
+      width: 90%;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ee9ca7;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .volver:hover {
+      background: #e88c97;
+    }
+
+    .seccion h3 {
+      font-family: Arial, sans-serif; 
+    }
+  </style>
+</head>
+<body>
+  <div id="inicio">
+    <header>
+      <div class="hero-icon">👶👨‍👩‍👧‍👦</div>
+      <h1>Crianza respetuosa, tejiendo vínculos entre familia, escuela y comunidad</h1>
+    </header>
+
+    <section class="secciones">
+      <div class="seccion" onclick="mostrarPagina('introduccion')">
+        <div class="icono">📚</div>
+        <h3>Introducción</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 60%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('videos')">
+        <div class="icono">🎥</div>
+        <h3>Videos Educativos</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 70%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('emociones')">
+        <div class="icono">😊</div>
+        <h3>Reconocimiento de Emociones</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 60%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('comunicacion')">
+        <div class="icono">🗣️</div>
+        <h3>Comunicación Asertiva, Escucha Activa y Construcción de un Espacio Seguro</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 70%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('disciplina')">
+        <div class="icono">💖</div>
+        <h3>Disciplina Amorosa y el Desarrollo de la Autonomía</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 50%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('empatia')">
+        <div class="icono">🤝</div>
+        <h3>Comunicación Empática</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 65%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('resolucion')">
+        <div class="icono">✌️</div>
+        <h3>Resolución Pacífica de Conflictos</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 55%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('toma')">
+        <div class="icono">🧠</div>
+        <h3>Toma de Decisiones</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 60%"></div>
+      </div>
+      <div class="seccion" onclick="mostrarPagina('crianza')">
+        <div class="icono">🍼</div>
+        <h3>Crianza Respetuosa</h3>
+        <div class="contenido-placeholder"></div>
+        <div class="contenido-placeholder" style="width: 70%"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Aquí están las nuevas páginas de cada sección -->
+
+  <div id="introduccion" class="pagina">
+    <header><div class="icono">📚</div><h2>Introducción</h2></header>
+    <div class="bloque">
+        <h3>
+            La crianza respetuosa es un enfoque que se centra en el respeto mutuo, la empatía y la comprensión en las relaciones familiares. Se trata de acompañar el desarrollo de los niños de manera que se promueva su bienestar emocional, mental y físico, mientras se fomenta un vínculo saludable entre padres e hijos. Esta metodología promueve el entendimiento mutuo, la resolución pacífica de conflictos y la autonomía del niño, sin recurrir a castigos físicos ni humillaciones.
+        </h3>
+    </div>
+
+    <div class="bloque">
+        <h3>Los principios clave de la crianza respetuosa incluyen:</h3>
+        <ul>
+            <li><strong>Escucha activa:</strong> Prestar atención plena a las necesidades y sentimientos del niño, reconociendo sus emociones y validándolas.</li>
+            <li><strong>Empatía:</strong> Ser capaz de ponerse en el lugar del niño para entender su perspectiva.</li>
+            <li><strong>Respeto mutuo:</strong> Tratar al niño con el mismo respeto que se le da a cualquier adulto, fomentando un ambiente de confianza.</li>
+            <li><strong>Comunicación abierta:</strong> Mantener un canal de comunicación sincero, que permita al niño expresar sus pensamientos y emociones sin miedo a ser juzgado.</li>
+            <li><strong>Disciplina positiva:</strong> Establecer límites y consecuencias con amor y respeto, en lugar de usar castigos.</li>
+        </ul>
+    </div>
+
+    <div class="bloque">
+        <h3>
+            Esta filosofía de crianza no solo beneficia al niño, sino que también fortalece la relación entre los miembros de la familia, fomentando un ambiente de cooperación y comprensión mutua.
+        </h3>
+    </div>
+
+    <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+
+  <div id="videos" class="pagina">
+    <header><div class="icono">🎥</div><h2>Videos Educativos</h2></header>
+    <div class="bloque"><h3>Video 1</h3><div class="texto-placeholder"></div></div>
+    <div class="bloque"><h3>Video 2</h3><div class="texto-placeholder"></div></div>
+    <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+  </div>
+
+  <div id="emociones" class="pagina">
+    <header>
+        <div class="icono">😊</div>
+        <h2>Reconocimiento de Emociones</h2>
+    </header>
+
+    <div class="bloque">
+        <h3>Reconocer y Aceptar los Sentimientos del Niño</h3>
+        <p>Antes de corregir el comportamiento del niño, es fundamental reconocer y aceptar sus sentimientos. Varios estudios y teorías, como las de disciplina positiva (Adler y Dreikurs), enfatizan que debemos conectar emocionalmente con el niño antes de influir en su conducta. Sin una conexión empática, no es posible cambiar el comportamiento de manera efectiva.</p>
+
+        <br>
+
+        <h4>Destinatarios:</h4>
+        <p>Padres, cuidadores y docentes. Esta actividad está adaptada tanto en el hogar como en el aula, para niños pequeños o en edad escolar.</p>
+
+        <br>
+
+        <h4>Tema Asociado:</h4>
+        <p>Reconocer emociones.</p>
+
+        <br>
+
+        <h4>Fundamento Teórico:</h4>
+        <p>Las teorías de disciplina positiva (Adler y Dreikurs) sugieren que antes de corregir cualquier comportamiento, debemos primero establecer una conexión emocional con el niño. Esta conexión se logra reconociendo y validando sus emociones, lo que permite una intervención más efectiva y comprensiva.</p>
+
+        <br>
+
+        <h4>Objetivo de la Actividad:</h4>
+        <p>Fomentar la práctica de la escucha activa y el reconocimiento de las emociones por parte de adultos (padres, maestros, cuidadores). Ante un comportamiento desafiante, debemos identificar, aceptar y acompañar la emoción del niño. Esto permite reducir la frustración y facilita que el niño esté más dispuesto a recibir correcciones.</p>
+
+        <br>
+
+        <h4>Materiales Necesarios:</h4>
+        <ul>
+            <li>Tarjetas o dibujos de expresiones faciales (alegría, tristeza, enojo, miedo, ansiedad, etc.) para ayudar al niño a identificar sus emociones.</li>
+            <li>Muñecos, títeres o figuras (opcional) para dramatizar situaciones emocionales.</li>
+            <li>Hojas de papel y colores, para que el niño pueda dibujar cómo se siente.</li>
+            <li>Un ambiente tranquilo con cojines o sillas, sin distracciones como celulares o ruidos fuertes.</li>
+        </ul>
+
+        <br>
+
+        <h4>Pasos para Implementar:</h4>
+        <ol>
+            <li>Simule o describa un escenario real en el que el niño experimente una gran emoción (por ejemplo, un juguete roto). Luego, invite al niño a compartir lo que sucedió y cómo se siente.</li>
+            <li>Pregunte con una voz amigable, “¿Cómo te sientes cuando esto pasó?” Esto permitirá al niño expresar sus emociones y observar su lenguaje corporal. Use las tarjetas de emociones si es necesario.</li>
+            <li>Responda reconociendo la emoción del niño, por ejemplo: “Veo que estás muy enojado/triste.” Evite minimizar sus sentimientos o criticarlos. Puede decir: “A mí también me pasa a veces” para normalizar la emoción.</li>
+            <li>Si el niño lo requiere, ofrezca un abrazo, un toque en el hombro o palabras calmantes como “Estoy aquí para ayudarte”. Asegúrese de usar un tono de voz tranquilo.</li>
+            <li>Una vez que la emoción haya sido reconocida, pregunte al niño cómo cree que pueden mejorar la situación. Ejemplos: “¿Qué podemos hacer ahora para sentirnos mejor?” o “¿Cómo podemos arreglar el juguete?” Esto implica al niño en la resolución del problema.</li>
+            <li>Felicite al niño por expresar sus emociones y por ayudar a resolver el problema. Agradezca al niño por compartir sus sentimientos, ya que esto fortalece la comprensión mutua y el vínculo afectivo.</li>
+        </ol>
+
+        <br>
+
+        <h4>Resultados Esperados:</h4>
+        <ul>
+            <li>El niño percibirá que el adulto está prestando atención a sus sentimientos.</li>
+            <li>El niño logrará identificar y expresar su emoción principal (enojo, tristeza, frustración, etc.).</li>
+            <li>El niño reforzará su autoestima y la confianza en la comunicación futura. Esta experiencia fortalece el vínculo afectivo entre el niño y el adulto.</li>
+        </ul>
+    </div>
+
+    <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+
+<div id="comunicacion" class="pagina">
+  <header>
+      <div class="icono">🗣️</div>
+      <h2>Comunicación Asertiva, Escucha Activa y Construcción de un Espacio Seguro</h2>
+  </header>
+
+  <div class="bloque">
+      <h3>Comunicación Abierta y Escucha Activa en un Espacio Seguro</h3>
+      <p>Un espacio seguro es aquel en el que el niño siente que pertenece, que puede expresar sus pensamientos sin miedo, sin ser juzgado, y recibe apoyo emocional. Crear un ambiente que fomente la confianza y la autoestima del niño es fundamental.</p>
+
+      <br>
+
+      <h4>Destinatarios:</h4>
+      <p>Padres, cuidadores y docentes.</p>
+
+      <br>
+
+      <h4>Tema Asociado:</h4>
+      <p>Comunicación asertiva, escucha activa y construcción de un espacio seguro.</p>
+
+      <br>
+
+      <h4>Fundamento Teórico:</h4>
+      <p>Un "espacio seguro" permite al niño expresarse libremente sin temor al juicio. Este concepto está respaldado por teorías de la psicología, y su propósito es fortalecer la autoestima y la confianza del niño. La escucha activa, descrita inicialmente por Carl Rogers y popularizada por Thomas Gordon, es una técnica clave que implica prestar atención completa al niño, con contacto visual, posturas abiertas, y una respuesta empática.</p>
+
+      <br>
+
+      <h4>Objetivo de la Actividad:</h4>
+      <p>Fomentar la práctica de la comunicación abierta y la escucha activa en adultos (padres, maestros, cuidadores). De esta manera, se busca crear un ambiente afectivo donde los niños se sientan cómodos para expresarse libremente, fortaleciendo el vínculo afectivo y el desarrollo de la confianza mutua. Además, ayudará a que el niño desarrolle seguridad emocional.</p>
+
+      <br>
+
+      <h4>Materiales Necesarios:</h4>
+      <ul>
+          <li>Sillas o cojines para sentarse a la misma altura, promoviendo igualdad.</li>
+          <li>Objetos parlantes, como un micrófono de juguete o un objeto que indique quién tiene el turno de hablar.</li>
+          <li>Carteles con normas de convivencia: escuchar y respetar turnos para hablar.</li>
+          <li>Hojas, marcadores o lápices para que los niños dibujen o escriban ideas y sentimientos.</li>
+          <li>Tarjetas con preguntas abiertas, como: ¿Cómo estuvo tu día? ¿Qué te hace feliz o triste? Para iniciar un diálogo.</li>
+          <li>Un espacio tranquilo, libre de distracciones electrónicas, con iluminación suave o música ambiental.</li>
+      </ul>
+
+      <br>
+
+      <h4>Pasos para Implementar:</h4>
+      <ol>
+          <li>Organizar el aula o el espacio en casa en un círculo acogedor. Explique a los niños que juntos van a crear un espacio seguro donde todos puedan hablar sin miedo. Establezca un ambiente cálido y libre de distracciones (sin televisores ni celulares).</li>
+          <li>En grupo, formule normas claras, como: “Sólo habla quien tiene el objeto parlante”, “No juzgamos lo que el otro dice” y “Todo lo que se dice aquí es secreto y se queda entre nosotros”.</li>
+          <li>Invite a cada niño a compartir algo sencillo, como cómo se siente hoy, algo bueno de su día o una emoción actual. El adulto también puede participar, diciendo: “Yo me siento contento porque…”</li>
+          <li>Use preguntas abiertas sobre temas cotidianos, como: “¿Qué fue lo mejor de tu día?” o “¿Hubo algo que no te gustara?” Escuche con atención, manteniendo contacto visual y realizando comentarios breves para mostrar interés. Evite interrupciones y críticas.</li>
+          <li>Cada vez que un niño hable, responda reflejando lo dicho: por ejemplo, “Veo que te sientes feliz cuando jugaste con tu amigo” o “Entiendo que te moleste…”. Agradezca su aporte y recuerde que sus opiniones son importantes.</li>
+          <li>Concluya resaltando lo positivo: “Gracias a todos por compartir. Recordemos que este es siempre un espacio seguro para todos.” Puede terminar con una breve actividad de relajación o aplausos.</li>
+      </ol>
+
+      <br>
+
+      <h4>Contextualización:</h4>
+      <p>Esta actividad está diseñada para contextos escolares y familiares, especialmente en aquellos donde los niños no tienen muchos espacios de expresión emocional o un diálogo activo. Es común que en la escuela o en casa se prioricen las tareas o los comportamientos, dejando poco tiempo para hablar sobre sus sentimientos o experiencias personales.</p>
+
+      <br>
+
+      <h4>Resultados Esperados:</h4>
+      <ul>
+          <li>Que los niños comprendan el respeto mutuo.</li>
+          <li>Que los niños aprendan a comunicarse asertivamente, se sientan escuchados y valoren la interacción.</li>
+          <li>Que el niño sienta que su voz es importante, lo cual fortalece su autoestima y confianza para expresar sus sentimientos en el futuro.</li>
+      </ul>
+  </div>
+
+  <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+<div id="disciplina" class="pagina">
+  <header>
+      <div class="icono">💖</div>
+      <h2>Disciplina Amorosa y el Desarrollo de la Autonomía</h2>
+  </header>
+
+  <div class="bloque">
+      <h3>Establecer límites claros, y conscientes, fundados en amor y seguridad, explicando cada regla con respeto, no imponiendo una autoridad rígida</h3>
+
+      <br>
+
+      <h4>A quién va dirigido:</h4>
+      <p>Cuidadores y docentes.</p>
+
+      <br>
+
+      <h4>Tema Asociado:</h4>
+      <p>Disciplina amorosa y el desarrollo de la autonomía.</p>
+
+      <br>
+
+      <h4>Fundamento Teórico:</h4>
+      <p>Immanuel Kant expresa que cada persona es "un fin en sí mismo", no un medio para otros fines. Al poner límites con amor, se reconoce la dignidad del niño, y se le muestra que sus derechos y necesidades importan. Sin embargo, vivir en comunidad implica respetar ciertas reglas. De esta manera, fomentamos la capacidad del niño para elegir lo correcto por sí mismo, no por miedo al castigo, sino por respeto a las normas que protegen a todos.</p>
+
+      <br>
+
+      <h4>Objetivo de la Actividad:</h4>
+      <p>Que los niños entiendan las reglas claras, que sientan seguridad y desarrollen su voluntad para tomar decisiones responsables.</p>
+
+      <br>
+
+      <h4>Materiales Necesarios:</h4>
+      <ul>
+          <li>Cartulinas de colores.</li>
+          <li>Marcadores o crayones.</li>
+          <li>Cinta adhesiva o imanes.</li>
+          <li>Stickers (opcional).</li>
+      </ul>
+
+      <br>
+
+      <h4>Pasos para Implementar:</h4>
+      <ol>
+          <li><strong>Momento tranquilo:</strong> Reúnanse después de la merienda o antes de jugar.</li>
+          <li><strong>Invitación participativa:</strong> Pregunten: “¿Qué reglas te ayudan a sentirte seguro?” Escuchen sus ideas.</li>
+          <li><strong>Creación en equipo:</strong> Escriban cada regla en una cartulina, ¡y que la decoren con stickers y dibujos divertidos!</li>
+          <li><strong>Explicación amable:</strong> En vez de decir “¡No grites!”, mejor decir “Hablando suave, nos entendemos mejor y la pasamos más chévere juntos”.</li>
+          <li><strong>Búsqueda de opciones:</strong> Pregunten: “¿Cómo prefieres que te recordemos la regla cuando se nos escapa?”</li>
+          <li><strong>Ubicación destacada:</strong> Coloca las cartulinas en un lugar visible y central de la casa.</li>
+          <li><strong>Recompensa positiva:</strong> Cada vez que respeten las reglas, celébralo con un abrazo o un cumplido cariñoso.</li>
+      </ol>
+
+      <br>
+
+      <h4>Contexto y Beneficios:</h4>
+      <p>Muy pronto, los niños asimilarán las normas porque las harán suyas. Se guiarán por respeto y cariño, lo que fortalecerá la confianza. El hogar respirará paz y armonía.</p>
+  </div>
+
+  <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+<div id="resolucion" class="pagina">
+  <header>
+    <div class="icono">✌️</div>
+    <h2>Resolución Pacífica de Conflictos</h2>
+  </header>
+
+  <section class="bloque">
+    <h3>Destinatario</h3>
+    <p>Familias, cuidadores, docentes y personas responsables del cuidado infantil.</p>
+
+    <h3>Tema Asociado</h3>
+    <p>Resolución pacífica de conflictos en la crianza respetuosa.</p>
+
+    <h3>Fundamento Teórico</h3>
+    <p>
+      Esta recomendación se basa en los enfoques de disciplina positiva de <strong>Jane Nelsen</strong> y la comunicación no violenta de <strong>Marshall Rosenberg</strong>.
+      Según estos enfoques, los niños aprenden mejor cuando experimentan el respeto mutuo y la colaboración en lugar del control y el castigo.
+    </p>
+    <p>
+      El psicólogo <strong>Lawrence Kohlberg</strong> demostró que el desarrollo moral de los niños avanza cuando se les permite razonar sobre problemas y buscar soluciones justas,
+      en lugar de simplemente obedecer por miedo al castigo.
+    </p>
+    <p>
+      <strong>Daniel Siegel</strong> y <strong>Tina Payne Bryson</strong>, en su trabajo sobre <em>"disciplina sin drama"</em>, explican cómo las respuestas punitivas activan el sistema de estrés del cerebro infantil,
+      mientras que las respuestas respetuosas fortalecen las conexiones neurales relacionadas con la autorregulación y la empatía.
+    </p>
+
+    <h3>Objetivo de la Actividad</h3>
+    <p>
+      Proporcionar herramientas prácticas para que adultos y niños aprendan a resolver conflictos sin recurrir a gritos, castigos físicos o humillaciones,
+      desarrollando así habilidades de comunicación efectiva, regulación emocional y pensamiento orientado a soluciones.
+    </p>
+
+    <h3>Materiales Necesarios</h3>
+    <ul>
+      <li>Cartulina para crear un "Acuerdo de Resolución de Conflictos"</li>
+      <li>Marcadores de colores</li>
+      <li>Tarjetas con emociones ilustradas</li>
+      <li>Cuaderno para "Diario de Soluciones"</li>
+    </ul>
+
+    <h3>Pasos para Implementar</h3>
+    <ol>
+      <li><strong>Reunión familiar introductoria:</strong> Explicar de manera apropiada para la edad que todos tenemos problemas y conflictos, pero podemos aprender a resolverlos sin lastimarnos.</li>
+      <li><strong>Creación conjunta del "Acuerdo de Resolución de Conflictos":</strong> Diseñar un cartel con los pasos:</li>
+      <ul>
+        <li>Respirar profundo y calmarse</li>
+        <li>Identificar el problema específico</li>
+        <li>Cada persona expresa cómo se siente usando "yo me siento..."</li>
+        <li>Todos proponen posibles soluciones</li>
+        <li>Elegimos una solución justa para probar</li>
+      </ul>
+      <li><strong>Práctica guiada con situaciones hipotéticas:</strong> Representar situaciones de conflicto comunes y practicar los pasos establecidos.</li>
+      <li><strong>Implementación del "rincón de paz":</strong> Designar un espacio en el hogar con elementos calmantes donde acudir para regularse emocionalmente antes de abordar un conflicto.</li>
+      <li><strong>Diario de soluciones:</strong> Registrar los conflictos resueltos, las soluciones encontradas y cómo se sintieron todos después.</li>
+      <li><strong>Reuniones semanales de seguimiento:</strong> Revisar qué está funcionando y qué necesita ajustes en el proceso.</li>
+    </ol>
+
+    <h3>Contextualización</h3>
+    <p>
+      Muchas familias enfrentan situaciones de tensión donde recurren a gritos o amenazas por carecer de herramientas alternativas.
+      Esta práctica reconoce que los conflictos son inevitables, pero pueden ser oportunidades de aprendizaje. Se adapta a diferentes contextos culturales y necesidades específicas,
+      entendiendo que la resolución pacífica es un proceso de aprendizaje continuo tanto para adultos como para niños.
+    </p>
+
+    <h3>Resultados Esperados</h3>
+    <ul>
+      <li>Disminución significativa de episodios de gritos, amenazas o castigos físicos.</li>
+      <li>Mayor capacidad de los niños para identificar y expresar sus emociones apropiadamente.</li>
+      <li>Desarrollo de habilidades de escucha activa y empatía.</li>
+      <li>Mejor ambiente familiar con comunicación más efectiva.</li>
+      <li>Adultos con mayor autocontrol y mejores estrategias ante situaciones desafiantes.</li>
+    </ul>
+  </section>
+
+  <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+
+<div id="toma" class="pagina">
+  <header>
+    <div class="icono">🧠</div>
+    <h2>Toma de Decisiones</h2>
+  </header>
+
+  <section class="bloque">
+    <h3>Destinatario</h3>
+    <p>Familias, cuidadores, docentes y adultos responsables del desarrollo infantil.</p>
+
+    <h3>Tema Asociado</h3>
+    <p>Fomento de la autonomía y la toma de decisiones en el marco de la crianza respetuosa.</p>
+
+    <h3>Fundamento Teórico</h3>
+    <p>
+      Esta recomendación se fundamenta en las teorías constructivistas de <strong>Jean Piaget</strong> y la pedagogía <strong>Montessori</strong>,
+      que enfatizan la importancia del aprendizaje activo y la exploración independiente.
+    </p>
+    <p>
+      Según <strong>María Montessori</strong>, los niños tienen un impulso natural hacia la independencia que debe ser respetado y apoyado con el lema:
+      <em>"ayúdame a hacerlo por mí mismo"</em>.
+    </p>
+    <p>
+      La <strong>teoría de la autodeterminación</strong> de <strong>Ryan y Deci</strong> también respalda este enfoque,
+      indicando que la autonomía es una necesidad psicológica básica para el desarrollo óptimo.
+    </p>
+
+    <h3>Objetivo de la Actividad</h3>
+    <p>
+      Implementar estrategias que permitan a los niños desarrollar progresivamente su autonomía y capacidad de toma de decisiones según su edad y etapa de desarrollo,
+      fortaleciendo su autoconfianza y responsabilidad.
+    </p>
+
+    <h3>Materiales Necesarios</h3>
+    <ul>
+      <li>Tablas visuales para rutinas y responsabilidades</li>
+      <li>Estantes y organizadores a la altura del niño</li>
+      <li>Materiales para actividades de la vida diaria apropiados para su tamaño</li>
+      <li>Calendario semanal para planificar decisiones</li>
+      <li>Tarjetas con opciones visuales para facilitar elecciones</li>
+    </ul>
+
+    <h3>Pasos para Implementar</h3>
+    <ol>
+      <li><strong>Evaluación de capacidades:</strong> Observar cuidadosamente qué puede hacer el niño por sí mismo y qué está preparado para aprender a hacer.</li>
+      <li><strong>Ambiente preparado:</strong> Adaptar espacios físicos para facilitar la independencia (muebles a su altura, materiales accesibles).</li>
+      <li>
+        <strong>Sistema progresivo de toma de decisiones:</strong>
+        <ul>
+          <li>Para niños pequeños: ofrecer dos opciones sencillas ("¿Quieres el vaso rojo o el azul?")</li>
+          <li>Para niños mayores: aumentar gradualmente la complejidad de las decisiones y sus consecuencias.</li>
+        </ul>
+      </li>
+      <li><strong>Implementación de rutinas con elección:</strong> Crear tablas visuales de rutinas donde el niño pueda decidir el orden de algunas actividades.</li>
+      <li><strong>Momentos específicos para decisiones diarias:</strong> Establecer espacios para elegir ropa, merienda y actividades de tiempo libre.</li>
+      <li><strong>Validación del proceso:</strong> Reconocer el esfuerzo y las decisiones tomadas, independientemente del resultado, para reforzar el proceso de autonomía.</li>
+      <li><strong>Reflexión guiada:</strong> Ayudar a los niños a evaluar los resultados de sus decisiones sin juicios, fomentando el aprendizaje de la experiencia.</li>
+    </ol>
+
+    <h3>Contextualización</h3>
+    <p>
+      En muchos contextos culturales existe una tendencia a limitar la autonomía infantil por sobreprotección o por subestimar sus capacidades.
+      Esta práctica reconoce que la autonomía es un proceso gradual que debe adaptarse a cada edad y contexto familiar.
+      Es particularmente valiosa en momentos de transición (inicio escolar, cambios familiares) cuando el niño necesita fortalecer su confianza y adaptabilidad.
+    </p>
+
+    <h3>Resultados Esperados</h3>
+    <ul>
+      <li>Aumento progresivo de la iniciativa personal y la capacidad de tomar decisiones.</li>
+      <li>Desarrollo de mayor seguridad y autoconfianza.</li>
+      <li>Disminución de la dependencia excesiva del adulto.</li>
+      <li>Mejor capacidad para asumir responsabilidades apropiadas para su edad.</li>
+      <li>Desarrollo de pensamiento crítico al evaluar opciones y consecuencias.</li>
+      <li>Transiciones más fluidas hacia la independencia en etapas posteriores.</li>
+      <li>Reducción de conflictos relacionados con el control y la negación de opciones.</li>
+    </ul>
+  </section>
+
+  <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+<div id="crianza" class="pagina">
+  <header>
+    <div class="icono">🍼</div>
+    <h2>Crianza Respetuosa</h2>
+  </header>
+
+  <section class="bloque">
+    <h3>Destinatario</h3>
+    <p>Familias, cuidadores y docentes.</p>
+
+    <h3>Tema Asociado</h3>
+    <p>Crianza respetuosa.</p>
+
+    <h3>Fundamento Teórico</h3>
+    <p>
+      Basado en teorías del desarrollo como las de <strong>Jean Piaget</strong>, <strong>Lev Vygotsky</strong> y <strong>María Montessori</strong>, estos autores coinciden en que cada niño tiene su propio ritmo, intereses y manera de aprender.
+      Esto implica que no podemos criar ni educar a todos de la misma forma. Piaget y Vygotsky explican que los niños pasan por etapas diferentes y necesitan apoyos distintos según su momento de desarrollo.
+      Montessori propone observar y respetar esa individualidad, dejando que el niño explore según su ritmo.
+    </p>
+    <p>
+      En conjunto, estas ideas nos invitan a adaptar nuestras formas de crianza, escuchando y observando a cada niño como único.
+    </p>
+
+    <h3>Objetivo de la Actividad</h3>
+    <p>
+      Promover la comprensión de la individualidad de cada niño/a y reflexionar sobre cómo adaptar la crianza o la interacción respetando su etapa de desarrollo.
+    </p>
+
+    <h3>Materiales Necesarios</h3>
+    <ul>
+      <li>Hojas y lápices.</li>
+    </ul>
+
+    <h3>Pasos para Implementar</h3>
+    <ol>
+      <li><strong>Explicación sobre la importancia de conocer al niño:</strong> Identificar su temperamento, intereses, etapa de desarrollo y estilo de aprendizaje.</li>
+      <li><strong>Entregar a cada padre o madre una ficha:</strong> Completar con preguntas sobre la personalidad, intereses, momentos favoritos del niño/a.</li>
+      <li><strong>Socializar en pequeños grupos:</strong> Explicar cómo piensan adaptarse.</li>
+      <li><strong>Reflexión grupal:</strong> Cómo cambia la relación cuando se entiende mejor al niño/a.</li>
+    </ol>
+
+    <h3>Contextualización</h3>
+    <p>
+      Muchas veces los adultos aplican normas o estilos de crianza generales sin tener en cuenta que cada niño/a es único en su forma de ser.
+      Esta actividad busca fomentar una mirada individualizada, basada en la observación y el reconocimiento de las características propias del niño o niña.
+    </p>
+
+    <h3>Resultados Esperados</h3>
+    <ul>
+      <li>Mayor sensibilidad y empatía hacia las necesidades individuales.</li>
+      <li>Compromisos concretos.</li>
+      <li>Mayor conexión emocional y vínculos afectivos.</li>
+    </ul>
+
+    <h3>Fomentar el Autocuidado en los Cuidadores</h3>
+
+    <h3>Destinatario</h3>
+    <p>Familias, cuidadores y docentes.</p>
+
+    <h3>Tema Asociado</h3>
+    <p>Crianza respetuosa.</p>
+
+    <h3>Fundamento Teórico</h3>
+    <p>
+      La <strong>teoría del apego</strong> de <strong>John Bowlby</strong> y <strong>Mary Ainsworth</strong> indican que los niños necesitan adultos emocionalmente disponibles para sentirse seguros y desarrollar vínculos sanos.
+      Si el adulto está agotado, le puede resultar difícil ofrecer contención y afecto.
+      <strong>Diana Baumrind</strong> destaca que el estilo de crianza más equilibrado y positivo surge cuando el adulto está en calma, sabe poner límites con cariño y se comunica con respeto.
+    </p>
+    <p>
+      Cuidarse no es egoísmo, sino una forma de garantizar una relación más amorosa, estable y saludable con los niños.
+    </p>
+
+    <h3>Objetivo de la Actividad</h3>
+    <p>
+      Fomentar prácticas de autocuidado emocional y físico en quienes acompañan la crianza infantil, para mejorar la calidad del vínculo con los niños y niñas.
+    </p>
+
+    <h3>Materiales Necesarios</h3>
+    <ul>
+      <li>Hojas y lápices.</li>
+    </ul>
+
+    <h3>Pasos para Implementar</h3>
+    <ol>
+      <li><strong>Relajación guiada:</strong> Para conectar con el cuerpo y las emociones.</li>
+      <li><strong>Rueda del bienestar:</strong> Cada persona marca en una hoja su estado de ánimo en distintas áreas de su vida (descanso, alimentación, emociones, tiempo personal, etc.).</li>
+      <li><strong>Acciones sencillas:</strong> Definir acciones que puedan implementar cada semana para mejorar sus áreas personales.</li>
+      <li><strong>Reflexión:</strong> ¿Cómo me siento cuando estoy bien? ¿Cómo cambia mi forma de estar con los niños?</li>
+      <li><strong>Crear una frase personal:</strong> Que recuerde a cada persona que debe cuidarse para cuidar a los demás.</li>
+    </ol>
+
+    <h3>Contextualización</h3>
+    <p>
+      El agotamiento físico y emocional puede afectar la manera en que los adultos se relacionan con los niños. Esta actividad pretende generar conciencia sobre la importancia del autocuidado como parte esencial del rol educativo y afectivo.
+    </p>
+
+    <h3>Resultados Esperados</h3>
+    <ul>
+      <li>Conciencia sobre la necesidad del autocuidado como parte del acompañamiento infantil.</li>
+      <li>Estrategias personales de bienestar.</li>
+      <li>Reducción del estrés y mejora en la disposición emocional hacia los niños.</li>
+    </ul>
+  </section>
+
+  <a href="#" class="volver" onclick="volverInicio()">← Volver</a>
+</div>
+
+
+  <script>
+    function mostrarPagina(id) {
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById(id).classList.add("active");
+    }
+
+    function volverInicio() {
+      document.querySelectorAll(".pagina").forEach((p) => p.classList.remove("active"));
+      document.getElementById("inicio").style.display = "block";
+    }
+  </script>
+</body>
+</html>
